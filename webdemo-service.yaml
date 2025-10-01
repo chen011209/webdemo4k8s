@@ -1,0 +1,20 @@
+apiVersion: v1 # Service 属于 Kubernetes 核心 API 组，版本为 v1（稳定版）
+kind: Service
+metadata:
+  name: webdemo-service  # Service 名称
+spec:
+  selector:
+    app: webdemo  # 必须与 Deployment 中 Pod 的标签（app: webdemo）一致，才能关联 Pod
+  type: NodePort  # 外部访问类型（NodePort）
+  ports:
+    - port: 8080        # Service 自身在集群内的 “服务端口”，集群内其他 Pod / 服务通过这个端口访问 Service
+      targetPort: 8080  # 对应 Pod 内的端口（与 containerPort 一致）
+      nodePort: 30080   # 外部访问端口（30000-32767 范围内）
+
+#Kubernetes Service 有多种类型，NodePort 是允许外部（集群外）访问服务的一种方式，其他常见类型包括：
+#ClusterIP（默认，仅集群内可访问）；
+#LoadBalancer（借助云厂商负载均衡器暴露服务，适合生产环境）。
+
+#Service 的 “定义” 是集群级的，整个集群只有 “一份”
+#但 Service 的 “功能实现” 会覆盖到每个 Node——
+#这是因为 Service 的核心功能依赖每个 Node 上的 kube-proxy 组件，通过分布式的路由规则，让每个 Node 都能处理访问该 Service 的流量。
