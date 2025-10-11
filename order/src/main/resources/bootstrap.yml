@@ -7,4 +7,4 @@ spring:
         password: nacos               # 密码
         file-extension: yaml          # 配置文件格式
   application:
-    name: webdemo                     # 服务名称，与配置文件前缀对应
+    name: order                     # 服务名称，与配置文件前缀对应

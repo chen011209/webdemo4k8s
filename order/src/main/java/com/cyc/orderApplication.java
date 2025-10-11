@@ -4,8 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class webDemoApplication {
+public class orderApplication {
     public static void main(String[] args) {
-        SpringApplication.run(webDemoApplication.class, args);
+        SpringApplication.run(com.cyc.orderApplication.class, args);
     }
 }
