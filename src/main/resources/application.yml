@@ -1,9 +1,0 @@
-spring:
-  application:
-    name: your-service-name  # 服务名称，会显示在Nacos控制台
-  cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8848  # Nacos服务器地址（单机版）
-        username: nacos  # Nacos控制台默认用户名
-        password: nacos  # Nacos控制台默认密码
