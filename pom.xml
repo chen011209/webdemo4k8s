@@ -35,7 +35,7 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- Spring Cloud 依赖管理 -->
+            <!-- Spring Cloud 依赖管理（引入依赖管理后，cloud组件就不用指定版本了） -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
