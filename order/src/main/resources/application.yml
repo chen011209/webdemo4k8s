@@ -8,12 +8,3 @@ feign:
       default:
         connect-timeout: 5000
         read-timeout: 10000
-
-dubbo:
-  application:
-    name: order-dubbo
-    logger: slf4j
-  consumer:
-    timeout: 3000
-    check: false  # 全局关闭服务检查
-    loadbalance: roundrobin
