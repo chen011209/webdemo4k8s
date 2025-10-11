@@ -8,3 +8,12 @@ spring:
         file-extension: yaml          # 配置文件格式
   application:
     name: order                     # 服务名称，与配置文件前缀对应
+
+# Dubbo注册中心配置
+dubbo:
+  registry:
+    address: nacos://127.0.0.1:8848
+    username: nacos
+    password: nacos
+    parameters:
+      namespace: public

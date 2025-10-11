@@ -1,2 +1,24 @@
 server:
   port: 8080
+
+# 服务提供者 application.yml 配置（应用级配置）
+dubbo:
+  application:
+    name: user-dubbo  # Dubbo应用名称
+    logger: slf4j                # 日志框架
+  protocol:
+    name: dubbo                  # 协议名称
+    port: 20880                  # 服务端口，-1表示随机端口
+    threads: 200                 # 线程池大小
+  scan:
+    base-packages: com.example.provider.service  # 扫描服务实现类的包路径
+  provider:
+    retries: 0                   # 重试次数
+    loadbalance: roundrobin      # 负载均衡策略
+
+# 日志配置
+logging:
+  level:
+    root: info
+    com.example: debug
+    org.apache.dubbo: info       # Dubbo日志级别

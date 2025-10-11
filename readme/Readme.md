@@ -71,3 +71,4 @@ RPC 屏蔽了网络通信的复杂性（如数据传输、序列化 / 反序列�
 parent的pom文件只做依赖版本的管理
 common中引入通用的依赖 order和user引入common的包和各自需要的包
 
+dubbo的name和应用的name一致，导致feign调用的走到dubbo端口去了

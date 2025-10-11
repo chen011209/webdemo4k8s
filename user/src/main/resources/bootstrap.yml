@@ -7,6 +7,17 @@ spring:
         password: nacos               # 密码
         file-extension: yaml          # 配置文件格式
   application:
-    name: user                     # 服务名称，与配置文件前缀对应
+    name: user # 服务名称，与配置文件前缀对应
 
 #在nacos创建user.yaml即可读取到nacos
+
+
+
+# Dubbo注册中心配置
+dubbo:
+  registry:
+    address: nacos://127.0.0.1:8848  # Nacos注册中心地址
+    username: nacos
+    password: nacos
+    parameters:
+      namespace: public              # Nacos命名空间
