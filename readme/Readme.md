@@ -33,6 +33,12 @@ minikube stop
 #k8s删除 Deployment 后，它所管理的所有 Pod 会被自动终止并删除： kubectl delete deployment webdemo-deployment
 #k8s删除service：kubectl delete service webdemo-service
 
+## nacos
+单机启动（无MySql）:docker run -d --name nacos-server -p 8848:8848 -p 9848:9848 -p 9849:9849 -e MODE=standalone nacos/nacos-server:v2.3.0
+Nacos 2.x 相比 1.x 增加了 gRPC 协议用于客户端与服务器的通信，需要开放两个额外端口：
+9848：客户端 gRPC 通信端口（主端口 8848 + 1000）
+9849：服务端间 gRPC 通信端口（主端口 8848 + 1001）
+如果这些端口未开放或被占用，会导致服务注册失败并提示端口不可用。
 # 知识
 ## 为什么一个node上两个相同的pods端口不会冲突
 Kubernetes 中，每个 Pod 会被分配一个 唯一的集群内部 IP 地址（比如 10.244.1.5、10.244.1.6），且每个 Pod 的网络环境是完全隔离的：
