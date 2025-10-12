@@ -48,8 +48,8 @@ Pod B（IP: 10.244.1.6）的容器也监听 8080 端口，对外暴露的是 10.
 彼此的 8080 端口也不会冲突 ——Node 上的两个 Pod 就是这个逻辑，它们的 8080 端口属于不同的 “网络身份”（IP + 端口），互不干扰。
 
 
-## 
-创建service后，访问service即可实现负载均衡
+## 创建service后，访问service即可实现负载均衡
+
 
 todo
 #todo 现在应该固定service的外部访问方式了 生产是用云环境使用 LoadBalancer 类型服务（推荐）
@@ -59,6 +59,13 @@ todo
 在生产环境中，纯 LoadBalancer 或纯 Ingress 都较少见，更多是 “Ingress 作为七层入口，云 LoadBalancer 作为 Ingress 的四层入口”，形成 “分层负载均衡” 架构：
 
 配置管理：K8s 管基础设施配置，Nacos 管业务配置，避免权责混乱
+
+## dubbo与springcloud命名
+如果spring的apllication name为webdemo，dubbo的name也为webdemo
+另一个服务用feign调用时，因为name相同，feign请求可能会走到dubbo去
+
+解决方法：1、改dubbo的name为webdemo-dubbo
+2、Nacos 命名空间隔离或者 Nacos 分组隔离
 
 ## rpc
 RPC 的全称是 Remote Procedure Call（远程过程调用）。

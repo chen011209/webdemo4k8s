@@ -6,8 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @EnableDubbo(scanBasePackages = "com.cyc")  // 确保能扫描到@Service注解
-public class UserApplication {
+public class ProviderApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(UserApplication.class, args);
+        SpringApplication.run(ProviderApplication.class, args);
     }
 }

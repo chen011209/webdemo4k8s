@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  */
 @DubboService(version = "1.0.0", timeout = 3000,protocol = "dubbo")
 @Component
-public class UserServiceImpl implements UserService {
+public class ProviderServiceImpl implements UserService {
 
     @Override
     public String getUserInfo(Integer userId) {
