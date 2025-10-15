@@ -13,6 +13,8 @@ spring:
 dubbo:
   application:
     name: provider  # 添加应用名称配置
+    qos-port: 22223  # consumer 用此端口
+    qos-enable: true
   registry:
     address: nacos://127.0.0.1:8848  # Nacos注册中心地址
     username: nacos

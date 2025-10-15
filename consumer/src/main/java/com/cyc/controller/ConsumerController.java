@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 
 
-@RefreshScope  // 开启配置动态刷新 配置修改后无需重启服务
+@RefreshScope  // 开启配置动态刷新 配置修改后无需重启服务(读取nacos配置使用)
 @RestController
 public class ConsumerController {
     /**

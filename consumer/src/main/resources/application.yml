@@ -1,10 +1,2 @@
 server:
   port: 8080
-
-# Feign 配置
-feign:
-  client:
-    config:
-      default:
-        connect-timeout: 5000
-        read-timeout: 10000
