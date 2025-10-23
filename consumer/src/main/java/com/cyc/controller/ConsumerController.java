@@ -50,6 +50,7 @@ public class ConsumerController {
             protocol = "dubbo"
     )
     private UserService userService;
+
     @RequestMapping("/dubbo")
     public String testDubbo(){
         System.out.println(userService.getUserInfo(1));
